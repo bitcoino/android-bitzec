@@ -189,13 +189,13 @@ class MainPage extends React.Component {
         // Get btc value and get local currency
         // via coinmarketcap
         const curCurrency = this.props.settings.currency
-        const cmcZenInfoURL = 'https://api.coinmarketcap.com/v1/ticker/Zencash/?convert=' + curCurrency
+        const cmcZenInfoURL = 'https://api.coingecko.com/api/v3/simple/price?ids=bitzec&vs_currencies=' + curCurrency
         axios.get(cmcZenInfoURL)
           .then((resp) => {
             try {
               const coinmarketcapData = resp.data
-              const priceBtc = parseFloat(coinmarketcapData[0]['price_btc'])
-              const priceCurrency = parseFloat(coinmarketcapData[0]['price_' + curCurrency.toLowerCase()])
+              const priceBtc = parseFloat(coinmarketcapData[0]['btc'])
+              const priceCurrency = parseFloat(coinmarketcapData[0]['usd' + curCurrency.toLowerCase()])
 
               this.props.setZenInBtcValue(priceBtc)
               this.props.setZenInCurrencyValue(priceCurrency)
