@@ -189,7 +189,7 @@ class MainPage extends React.Component {
         // Get btc value and get local currency
         // via coinmarketcap
         const curCurrency = this.props.settings.currency
-        const cmcZenInfoURL = 'https://api.coinpaprika.com/v1/ticker/bzc-bitzec/?convert=' + curCurrency
+        const cmcZenInfoURL = 'https://api.coinmarketcap.com/v1/ticker/BitcoinZ/?convert=' + curCurrency
         axios.get(cmcZenInfoURL)
           .then((resp) => {
             try {
