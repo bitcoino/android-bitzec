@@ -18,7 +18,7 @@
     <platform name="android">
         <allow-intent href="market:*" />
         <allow-intent href="market:*" />
-        <preference name="android-minSdkVersion" value="19" />
+        <preference name="android-minSdkVersion" value="23" />
         <preference name="android-targetSdkVersion" value="25" />
         <preference name="android-maxSdkVersion" value="29" />
     </platform>
